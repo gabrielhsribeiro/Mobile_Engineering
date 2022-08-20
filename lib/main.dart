@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_engineering_project/Home.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MaterialApp(
+    title: 'Minha aplicaçâo',
+    home: Home(),
+    debugShowCheckedModeBanner: false,
+  ));
 }
 
 class MyApp extends StatelessWidget {
