@@ -3,20 +3,20 @@ import 'package:mobile_engineering_project/models/Usuario.dart';
 import 'package:mobile_engineering_project/views/InputCustomizado.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Login> createState() => _LoginState();
 }
 
-class _HomeState extends State<Home> {
+class _LoginState extends State<Login> {
   // ignore: prefer_final_fields
   TextEditingController _controllerEmail =
-      TextEditingController(text: 'mail@gmail.com');
+      TextEditingController(text: 'diego.minelli@gmail.com');
   // ignore: prefer_final_fields
   TextEditingController _controllerSenha =
-      TextEditingController(text: "12234567");
+      TextEditingController(text: "987654321");
 
   bool _cadastrar = false;
 
@@ -28,7 +28,9 @@ class _HomeState extends State<Home> {
     auth
         .createUserWithEmailAndPassword(
             email: usuario.email, password: usuario.senha)
-        .then((firebaseUser) {});
+        .then((firebaseUser) {
+      Navigator.pushReplacementNamed(context, "/");
+    });
   }
 
   _logarUsuario(Usuario usuario) {
@@ -38,7 +40,9 @@ class _HomeState extends State<Home> {
         .signInWithEmailAndPassword(
             email: usuario.email, password: usuario.senha)
         // ignore: non_constant_identifier_names
-        .then((FirebaseUser) {});
+        .then((FirebaseUser) {
+      Navigator.pushReplacementNamed(context, "/");
+    });
   }
 
   // ignore: unused_element
