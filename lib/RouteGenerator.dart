@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_engineering_project/views/Anuncios.dart';
 import 'package:mobile_engineering_project/views/Login.dart';
+import 'package:mobile_engineering_project/views/MeusAnuncios.dart';
+import 'package:mobile_engineering_project/views/NovoAnuncio.dart';
 
 class RouteGenerator {
   static Route<dynamic>? generateRoute(RouteSettings settings) {
@@ -14,6 +16,14 @@ class RouteGenerator {
       case "/login":
         return MaterialPageRoute(
           builder: (_) => Login(),
+        );
+      case "/meus-anuncios":
+        return MaterialPageRoute(
+          builder: (_) => MeusAnuncios(),
+        );
+      case "/novo-anuncio":
+        return MaterialPageRoute(
+          builder: (_) => NovoAnuncio(),
         );
       default:
         _erroRota();
