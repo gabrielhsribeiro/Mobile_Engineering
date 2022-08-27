@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_engineering_project/views/widgets/BotaoCustomizado.dart';
 
 class NovoAnuncio extends StatefulWidget {
   const NovoAnuncio({Key? key}) : super(key: key);
@@ -23,7 +24,23 @@ class _NovoAnuncioState extends State<NovoAnuncio> {
           child: Form(
             key: _formKey,
             child: Column(
-              children: <Widget>[],
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                // FormField(),
+                Row(
+                  children: <Widget>[
+                    Text("Estado"),
+                    Text("Categoria"),
+                  ],
+                ),
+                Text("Caixas de textos"),
+                BotaoCustomizado(
+                  texto: "Cadastrar anúncio",
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {}
+                  },
+                ),
+              ],
             ),
           ),
         ),

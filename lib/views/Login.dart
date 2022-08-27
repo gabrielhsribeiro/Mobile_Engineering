@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_engineering_project/models/Usuario.dart';
-import 'package:mobile_engineering_project/views/InputCustomizado.dart';
+import 'package:mobile_engineering_project/views/widgets/BotaoCustomizado.dart';
+import 'package:mobile_engineering_project/views/widgets/InputCustomizado.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
@@ -76,8 +77,6 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style =
-        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
     return Scaffold(
       appBar: AppBar(
         title: const Text(""),
@@ -127,14 +126,11 @@ class _LoginState extends State<Login> {
                     const Text("Cadastrar"),
                   ],
                 ),
-                ElevatedButton(
-                  style: style,
+                BotaoCustomizado(
+                  texto: _textoBotao,
                   onPressed: () {
                     _validarCampos();
                   },
-                  child: Text(
-                    _textoBotao,
-                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20),
